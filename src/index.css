@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 200 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+    --primary: 168 35% 38%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 40 25% 92%;
+    --secondary-foreground: 200 25% 15%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 200 10% 50%;
+    --accent: 16 60% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 168 35% 38%;
+    --radius: 0.75rem;
+    --chat-user: 168 25% 92%;
+    --chat-bot: 0 0% 100%;
+    --chat-option: 168 35% 38%;
+    --chat-option-foreground: 0 0% 100%;
+    --trust-badge: 168 30% 95%;
+    --trust-badge-foreground: 168 35% 30%;
+  }
+
+  .dark {
+    --background: 200 25% 10%;
+    --foreground: 40 33% 97%;
+    --card: 200 20% 14%;
+    --card-foreground: 40 33% 97%;
+    --primary: 168 40% 50%;
+    --primary-foreground: 200 25% 10%;
+    --secondary: 200 15% 20%;
+    --secondary-foreground: 40 33% 97%;
+    --muted: 200 15% 20%;
+    --muted-foreground: 200 10% 60%;
+    --border: 200 15% 22%;
+    --input: 200 15% 22%;
+    --ring: 168 40% 50%;
+    --chat-user: 200 15% 18%;
+    --chat-bot: 200 20% 14%;
+    --chat-option: 168 40% 50%;
+    --chat-option-foreground: 200 25% 10%;
+    --trust-badge: 168 20% 18%;
+    --trust-badge-foreground: 168 40% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3 {
+    font-family: 'DM Serif Display', serif;
+  }
+}
+
+@layer utilities {
+  .chat-bubble-bot {
+    @apply bg-white rounded-2xl rounded-bl-md shadow-sm border border-border;
+  }
+  .chat-bubble-user {
+    @apply rounded-2xl rounded-br-md;
+    background-color: hsl(168 25% 92%);
+  }
+  .chat-option-btn {
+    @apply rounded-full px-5 py-2.5 text-sm font-medium transition-all hover:opacity-90 hover:scale-[1.02] active:scale-[0.98];
+    background-color: hsl(168 35% 38%);
+    color: hsl(40 33% 97%);
+  }
+  .trust-badge {
+    @apply rounded-full px-3 py-1 text-xs font-medium inline-flex items-center gap-1.5;
+    background-color: hsl(168 30% 95%);
+    color: hsl(168 35% 30%);
+  }
+  .fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+  .slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
